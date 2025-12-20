@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como funciona</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+
+<!-- Cabecera -->
+
+<header>
+  <button onclick="window.location.href='main.html'" id="btnpag2">
+    Inicio
+  </button>
+</header>
+<body>
+
+
+<!-- Introducción -->
+
+<section>
+
+    <h1> ¿Como funciona nuestro cifrado? </h1>
+<br><br>
+    <p> En nuestra página web usamos una variante del cifrado Vigenère, un sistema clásico de cifrado polialfabético basado en el desplazamiento de letras mediante una clave secreta. </p>
+    <p> El objetivo es simple: transformar un mensaje legible en otro que resulte ininteligible para cualquiera que no conozca la clave, manteniendo un método claro y reproducible. </p>
+
+</section>
+
+<div class="divisor"></div>
+
+<!-- Explicación -->
+
+<section>
+
+    <h2> ¿Qué es el cifrado Vigenère? </h2>
+        <p> El cifrado Vigenère es un tipo de cifrado por sustitución. Eso significa que se reemplazan las letras del mensaje original por otras letras, pero con un patrón más complejo que los cifrados simples como el César (donde se sustituye cada letra por otra que está un número fijo de posiciones más adelante en el alfabeto). </p>
+        <p> Este cambio constante rompe los patrones simples y hace que el mensaje cifrado sea mucho más difícil de analizar sin conocer la clave correcta. </p>
+
+</section>
+
+<div class="divisor"></div>
+
+<!-- Nuestra variante -->
+
+<section>
+
+    <h2> ¿Que hace nuestra variante? </h2>
+        <p> En lugar de usar una palabra como clave, nuestra implementación utiliza una secuencia de números introducida por el usuario.
+            Cada número se transforma en un desplazamiento alfabético y se aplica de forma cíclica al mensaje, siguiendo el mismo principio matemático que el cifrado Vigenère original. </p>
+
+        <p> El proceso es el siguiente: </p>
+        <p> 1. Cada letra del mensaje se convierte en su posición alfabética (A=0, B=1, ..., Z=25). </p>
+        <p> 2. Cada número de la clave se utiliza para desplazar la posición de la letra correspondiente del mensaje. </p>
+        <p> 3. Si el final del alfabeto se alcanza, se vuelve a empezar desde el principio (es decir, después de Z viene A). </p>
+        <p> 4. El proceso se repite cíclicamente hasta que todo el mensaje ha sido cifrado.</p>
+
+        <p> El resultado es un nuevo conjunto de letras que conforma el mensaje cifrado. </p>
+
+</section>
+
+<div class="divisor"></div>
+
+<!-- Ejemplo práctico -->
+
+<section>
+
+    <h2> Ejemplo práctico </h2>
+        <p> Mensaje: “HOLA”. </p>
+        <p> Clave numérica: “1 2 3 4” </p>
+
+        <p> Convertimos las letras del mensaje a posiciones alfabéticas y aplicamos los desplazamientos indicados por la clave. </p>
+        <p> El resultado es el mensaje cifrado: “IQOE” </p>
+
+</section>
+
+<div class="divisor"></div>
+
+<!-- Sobre la seguridad -->
+ 
+<section>
+
+
+    <h2> Sobre la seguridad </h2>
+        <p> Este cifrado no pretende ser irrompible, pero sí efectivo dentro de su propósito. </p>
+        <p> La seguridad del cifrado depende en gran medida de la complejidad y longitud de la clave numérica utilizada. </p>
+        <p> Cuanto más larga y variada sea la clave, más difícil será para un atacante descifrar el mensaje sin conocerla. </p>
+        <p> Recomendamos a los usuarios que elijan claves que no sean fácilmente adivinables y que eviten patrones simples. </p>
+        <p> El cifrado no es magia, son matemáticas con criterio. </p>
+
+</section>
+
+
+<br><br><br><br><br><br><br><br><br>
+</body>

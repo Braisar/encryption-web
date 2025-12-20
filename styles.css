@@ -1,0 +1,251 @@
+/* Caja */
+
+    form {
+    background-color: rgba(214, 214, 214, 0.3);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    width: 340px;
+    text-align: center;
+    margin-right: auto;
+}
+    .caja {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.15); /* Borde */
+    width: 200px;
+    padding: 15px;
+    margin: auto; 
+    text-align: center;
+}
+    input {
+    background-color: rgba(255, 255, 240, 0.35);
+    width: 100%;
+    padding: 12px;
+    margin-top: 16px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    font-size: 16px;
+    margin-right: 20px;
+    box-sizing: border-box;
+}
+    input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+
+
+/* Estilo */
+
+    .divisor {
+  width: 65%;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 40px auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+    .divisor_cabecera {
+  width: 90%;
+  height: 1px;
+  background: rgb(0, 0, 0);
+  margin: 0 auto;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+    section {
+  margin-bottom: 10px;
+}
+     body {
+ font-family: 'Inter', 'sistem-ui' , sans-serif;
+    background: linear-gradient(180deg, #d6d6d6, #a1a1a1);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #111;
+    padding-top: 40px 20px;
+}
+
+
+/* Textos */
+
+    h1 {
+        font-weight: 600;
+        color: rgb(0, 0, 0); /* Color del texto */
+        background-color: none; 
+        text-align: center; /* Centra el texto */
+        padding: 20px;
+        margin: 0;
+        font-size: 40px;
+}
+    h2 {
+        font-weight: 600;
+        color: rgb(0, 0, 0); /* Color del texto */
+        background-color: none; 
+        text-align: center; /* Centra el texto */
+        padding: 20px;
+        margin: 0;
+}
+    h3 {
+        font-weight: 600;
+        color: rgb(0, 0, 0); /* Color del texto */
+        background-color: none; 
+        text-align: center; /* Centra el texto */
+        padding: 10px;
+        margin: 5px;
+}
+    p {
+        font-size: 18px; /* Tamaño del texto */
+        margin: auto;
+        padding: 2px;
+        text-align: left;
+        max-width: 800px;
+        line-height: 1.6; /* Altura de línea */
+}
+    ul {
+        font-size: 16px; /* Tamaño del texto */
+        margin: auto;
+        padding: 2px;
+        text-align: left;
+        max-width: 800px;
+        line-height: 1.2; /* Altura de línea */
+}
+    .auditoria {
+  max-width: 760px;
+  margin: 60px auto;
+  padding-top: 30px;
+  border-top: 1px solid rgba(0,0,0,0.15);
+}
+    .auditoria h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+    .auditoria ul {
+  list-style: none;
+  padding-left: 0;
+}
+    .auditoria li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #111;
+}
+    .auditoria-nota {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+    u{
+        font-size: 18px; /* Tamaño del texto */
+        margin: auto;
+        padding: 2px;
+        text-align: center;
+        max-width: 800px;
+        line-height: 1.6; /* Altura de línea */
+}
+
+
+
+/* Botones */
+
+    .button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 16px;
+    }
+    button:hover {
+    background: #1e40af;
+    }
+    #btnCifrar {
+    background: #1500ff;
+    color: white;
+    border: 1px solid #000000;
+    }
+    #btnCifrar:hover {
+    background: #0056c7;
+    }
+    #btnDescifrar {
+    background: #317b00;
+    color: white;
+    border: 1px solid #000000;
+    }
+    #btnDescifrar:hover {
+    background: #2cc900;
+    }
+    #btnpag2 {
+    background-color: #007bffb7;   /* color del botón */
+    color: white;                /* color del texto */
+    padding: 10px 20px;          /* tamaño */
+    border: none;                /* quitar borde */
+    border-radius: 6px;          /* bordes redondeados */
+    font-size: 16px;
+    cursor: pointer;
+    }
+    #btnpag2:hover {
+    background-color: #fff;
+    color: #000000;
+    }
+    #btnPag3 {
+    opacity: 0;
+}
+    #btnrazones {
+    background-color: #28a745;   /* color del botón */
+    color: white;                /* color del texto */
+    padding: 10px 20px;          /* tamaño */
+    border: none;                /* quitar borde */
+    border-radius: 6px;          /* bordes redondeados */
+    font-size: 16px;
+    cursor: pointer;
+    align-self: right;
+}
+
+
+
+
+#mensajeCifrado,
+#mensajeDescifrado {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+    background: rgba(255, 255, 240, 0.35);
+    padding: 15px;
+    width: 340px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+}
+
+
+
+
+
+
+.local-option {
+  max-width: 760px;
+  margin: 30px auto;
+  font-size: 15px;
+}
+
+.local-option .nota {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.estado {
+  max-width: 760px;
+  margin: 20px auto;
+  font-size: 15px;
+  color: #1f2937;
+}
