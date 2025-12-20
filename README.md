@@ -3,25 +3,21 @@
 ## Autor
 Braisar
 
-## Qué es este proyecto
-Este proyecto es una aplicación web sencilla que permite cifrar y descifrar
-mensajes mediante un sistema basado en el cifrado de Vigenère, usando una clave
-numérica introducida por el usuario.
+## What's this proyect about?
+This project is a simple web application that allows you to encrypt and decrypt messages using a system based on the Vigenère cipher, with a numerical key entered by the user.
 
-El objetivo es ofrecer una herramienta educativa y práctica para entender
-cómo funcionan los cifrados clásicos y fomentar la privacidad en las
-comunicaciones personales.
+The objective is to provide an educational and practical tool to understand how classical ciphers work and to promote privacy in personal communications.
 
-## Qué NO pretende ser
-- No es un sistema criptográfico moderno ni seguro frente a ataques avanzados.
-- No está diseñado para usos militares, comerciales o de alta seguridad.
-- No garantiza anonimato ni protección frente a vigilancia estatal.
-- No sustituye herramientas criptográficas profesionales.
+## What it does NOT intend to be?
+- It is not a modern cryptographic system nor is it secure against advanced attacks.
+- It is not designed for military, commercial, or high-security use.
+- It does not guarantee anonymity or protection against state surveillance.
+- It does not replace professional cryptographic tools.
 
-## Aviso legal
-Este software se distribuye con fines educativos y experimentales.
-El autor no se responsabiliza del uso que terceros hagan del mismo.
+## Legal Notice
+This software is distributed for educational and experimental purposes.
+The author is not responsible for any use made of it by third parties.
 
-## Licencia
-Este proyecto está publicado bajo licencia MIT.
-Consulta el archivo LICENSE para más detalles.
+## License
+This project is published under the MIT license.
+See the LICENSE file for more details.
