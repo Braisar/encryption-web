@@ -67,6 +67,15 @@
     color: #111;
     padding-top: 40px 20px;
 }
+    .divisor_razones {
+  width: 15%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 40px auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
 
 
 /* Textos */
