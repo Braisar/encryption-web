@@ -25,16 +25,11 @@
 
     <h1> Cifrado </h1>
 
-        <h2> Cifra tu mensaje, mejora tu privacidad. </h3>
+        <h2> Cifra tu mensaje, mejora tu privacidad. </h2>
     <br>
             <h3> Librate de Chat Control. </h3>
             <h3> Porque la privacidad no es un delito, es sentido común. </h3>
             <h3> Tu mensaje, tu clave, tú tienes el Control sobre tu privacidad. </h3>
-                <p> Este proceso se realiza completamente en tu navegador, no se envía nada fuera. </p>
-                <p> Esta herramienta nace como respuesta a la creciente supervisión de las comunicaciones privadas. </p>
-                
-
-
 
 </section>
 
@@ -56,12 +51,13 @@
 <form id="cifradoForm">
 
     <label for="libro">Introduce el libro:</label>
-    <input type="text" id="libro" placeholder="Algo que solo tú cocozcas. Ej: 36 8 09 12 13." required>
+    <input type="text" id="libro" placeholder="Ej: 1 26 31 7" required>
+    <p id="calidadClave" class="estado"></p>
     <br><br>
 
 
     <label for="mensaje">Introduce el mensaje:</label>
-    <input type="text" id="mensaje" placeholder="Tu mensaje" required>
+    <textarea id="mensaje" placeholder="Hola" rows="5" required></textarea>
     <br><br><br>
 
     <button type="button" id="btnCifrar">Cifrar Mensaje</button>
@@ -85,17 +81,24 @@
 
 <!-- Resultados -->
 
-<section>
+<section id="resultados">
 
         <p id="estado" class="estado"></p>
 
     <h2>Mensaje Cifrado:</h2>
-        <p id="mensajeCifrado"></p>
+        <p id="ejemploInicial">Ej cifrado: Ioqh</p>
+        <p id="mensajeCifrado"  style="display: none;"></p>
+        <button type="button" onclick="copiarTexto('mensajeCifrado')">
+        Copiar mensaje cifrado
+    </button>
+
 <br><br><br>
   
     <h2>Mensaje Descifrado:</h2>
         <p id="mensajeDescifrado"></p>
-
+        <button type="button" onclick="copiarTexto('mensajeDescifrado')">
+        Copiar mensaje descifrado
+    </button>
 
 
 
@@ -138,6 +141,22 @@
     </p>
 </section>
 
+<div class="divisor_cabecera"></div>
+
+<footer>
+
+  <button onclick="window.location.href='razones.html'" id="btnpag2">
+    ¿Porqué lo hacemos?
+  </button>
+
+  <button onclick="window.location.href='working.html'" id="btnpag2">
+    ¿Cómo funciona este cifrado?
+  </button>
+</footer>
+
+
+
+
 <!--
 
 
@@ -146,182 +165,7 @@
 
 -->
 
-<script>
-
-// Convierte el libro en números completos separados por espacios o comas
-
-function obtenerClaveLibro(libro) {
-    // Quitar caracteres basura y normalizar espacios
-    libro = libro.replace(/[^0-9 ,]/g, '').trim();
-
-    // Separar por espacio o coma
-    let grupos = libro.split(/[\s,]+/);
-
-    // Convertir a números (filtrando vacíos)
-    let numeros = grupos.filter(x => x.length > 0).map(x => parseInt(x));
-
-    return numeros; // Ej: [123, 45, 6789]
-}
-
-
-
-// Fuerza de la clave
-function fuerzaClave(clave) {
-    clave = limpiarTexto(clave);
-    if (clave.length < 5) return "Débil";
-    if (clave.length < 10) return "Media";
-    return "Fuerte";
-}
-
-
-// Cifrar
-function cifrarMensaje(libro, mensaje) {
-
-    let claveNumeros = obtenerClaveLibro(libro);
-
-    if (claveNumeros.length === 0) return "";
-
-    let mensajeCifrado = '';
-    let indiceClave = 0;
-
-    for (let i = 0; i < mensaje.length; i++) {
-        let char = mensaje[i];
-
-        // Si NO es letra → se deja igual
-        if (!/[a-zA-Z]/.test(char)) {
-            mensajeCifrado += char;
-            continue;
-        }
-
-        let letra = char.toLowerCase();
-
-        // Número completo (1, 2, 3, ... cifras)
-        let numero = claveNumeros[indiceClave % claveNumeros.length];
-
-        // Convertirlo a desplazamiento válido 0–25
-        let claveNum = numero % 26;
-
-        indiceClave++;
-
-        let pos = letra.charCodeAt(0) - 97;
-        let nuevaPos = (pos + claveNum) % 26;
-        let nuevaLetra = String.fromCharCode(nuevaPos + 97);
-
-        // Mantener mayúsculas
-        mensajeCifrado += (char === char.toUpperCase()) ? nuevaLetra.toUpperCase() : nuevaLetra;
-    }
-
-    return mensajeCifrado;
-}
-
-
-
-// Descifrar
-function descifrarMensaje(libro, mensaje) {
-
-    let claveNumeros = obtenerClaveLibro(libro);
-
-    if (claveNumeros.length === 0) return "";
-
-    let mensajeDescifrado = '';
-    let indiceClave = 0;
-
-    for (let i = 0; i < mensaje.length; i++) {
-        let char = mensaje[i];
-
-        if (!/[a-zA-Z]/.test(char)) {
-            mensajeDescifrado += char;
-            continue;
-        }
-
-        let letra = char.toLowerCase();
-
-        let numero = claveNumeros[indiceClave % claveNumeros.length];
-        let claveNum = numero % 26;
-
-        indiceClave++;
-
-        let pos = letra.charCodeAt(0) - 97;
-        let nuevaPos = (pos - claveNum + 26) % 26;
-        let nuevaLetra = String.fromCharCode(nuevaPos + 97);
-
-        mensajeDescifrado += (char === char.toUpperCase()) ? nuevaLetra.toUpperCase() : nuevaLetra;
-    }
-
-    return mensajeDescifrado;
-}
-
-
-// BOTONES
-
-// Boton Cifrar
-document.getElementById("btnCifrar").addEventListener("click", function() {
-    let libro = document.getElementById("libro").value;
-    let mensaje = document.getElementById("mensaje").value;
-
-    if (!libro || !mensaje) {
-        document.getElementById("estado").textContent =
-            "Completa todos los campos para continuar.";
-        return;
-    }
-
-    let cifrado = cifrarMensaje(libro, mensaje);
-
-    document.getElementById("mensajeCifrado").textContent = cifrado;
-    document.getElementById("mensajeDescifrado").textContent = "";
-    document.getElementById("estado").textContent =
-        "Mensaje cifrado localmente.";
-});
-
-
-
-// Boton Descifrar
-document.getElementById("btnDescifrar").addEventListener("click", function() {
-    let libro = document.getElementById("libro").value;
-    let mensaje = document.getElementById("mensaje").value;
-
-    if (!libro || !mensaje) {
-        document.getElementById("estado").textContent =
-            "Completa todos los campos para continuar.";
-        return;
-    }
-
-    let descifrado = descifrarMensaje(libro, mensaje);
-
-    document.getElementById("mensajeDescifrado").textContent = descifrado;
-    document.getElementById("mensajeCifrado").textContent = "";
-    document.getElementById("estado").textContent =
-        "Mensaje descifrado localmente.";
-});
-
-
-// Guardar datos localmente
-function guardarDatosLocalmente(libro, mensaje) {
-    localStorage.setItem("claveGuardada", libro);
-    localStorage.setItem("mensajeGuardado", mensaje);
-}
-
-function borrarDatosLocales() {
-    localStorage.removeItem("claveGuardada");
-    localStorage.removeItem("mensajeGuardado");
-}
-
-
-
-// Cargar datos guardados al iniciar
-window.addEventListener("load", () => {
-    const clave = localStorage.getItem("claveGuardada");
-    const mensaje = localStorage.getItem("mensajeGuardado");
-
-    if (clave && mensaje) {
-        document.getElementById("libro").value = clave;
-        document.getElementById("mensaje").value = mensaje;
-        document.getElementById("guardarLocal").checked = true;
-    }
-});
-
-
-</script>
+<script src="funciones.js"></script>
 
 
 </body>

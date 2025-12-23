@@ -32,6 +32,21 @@
     outline: none;
     border-color: #2563eb;
 }
+    textarea {
+    background-color: rgba(255, 255, 240, 0.35);
+    width: 100%;
+    padding: 12px;
+    margin-top: 16px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    font-size: 16px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+    input::placeholder,
+    textarea::placeholder {
+    color: #00000062;
+}
 
 
 
@@ -47,8 +62,8 @@
 }
     .divisor_cabecera {
   width: 90%;
-  height: 1px;
-  background: rgb(0, 0, 0);
+  height: 5px;
+  background: rgba(0, 0, 0, 0.5);
   margin: 0 auto;
   border-radius: 2px;
   margin-bottom: 10px;
@@ -75,6 +90,15 @@
   border-radius: 10px;
   margin-bottom: 10px;
 }
+    .divisor2 {
+  width: 45%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.25);
+  margin: 40px auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
 
 
 
@@ -166,26 +190,26 @@
     border-radius: 6px;
     padding: 12px 20px;
     font-size: 16px;
-    }
+}
     button:hover {
     background: #1e40af;
-    }
+}
     #btnCifrar {
     background: #1500ff;
     color: white;
     border: 1px solid #000000;
-    }
+}
     #btnCifrar:hover {
     background: #0056c7;
-    }
+}
     #btnDescifrar {
     background: #317b00;
     color: white;
     border: 1px solid #000000;
-    }
+}
     #btnDescifrar:hover {
     background: #2cc900;
-    }
+}
     #btnpag2 {
     background-color: #007bffb7;   /* color del botón */
     color: white;                /* color del texto */
@@ -194,11 +218,11 @@
     border-radius: 6px;          /* bordes redondeados */
     font-size: 16px;
     cursor: pointer;
-    }
+}
     #btnpag2:hover {
     background-color: #fff;
     color: #000000;
-    }
+}
     #btnPag3 {
     opacity: 0;
 }
@@ -212,12 +236,15 @@
     cursor: pointer;
     align-self: right;
 }
+    #btnrazones:hover {
+    background-color: #fff;
+    color: #000000;
+}
 
 
-
-
-#mensajeCifrado,
-#mensajeDescifrado {
+/* Mensajes */
+    #mensajeCifrado,
+    #mensajeDescifrado {
     font-size: 20px;
     font-weight: bold;
     color: #222;
@@ -227,31 +254,38 @@
     border-radius: 8px;
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
 }
-
-
-header {
+    #ejemploInicial {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00000062;
+    background: rgba(255, 255, 240, 0.35);
+    padding: 15px;
+    width: 340px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+    header {
   display: flex;
   justify-content: flex-end;
   padding: 15px;
 }
-
-
-
-
-
-
+    footer {
+  display: flex;
+  justify-content: center;
+  gap: 155px;              /* 👈 AQUÍ está la magia */
+  margin: 0 10px;
+  flex-wrap: wrap;        /* por si en móvil no caben */
+}
 .local-option {
   max-width: 760px;
   margin: 30px auto;
   font-size: 15px;
 }
-
 .local-option .nota {
   font-size: 14px;
   color: #555;
   margin-top: 5px;
 }
-
 .estado {
   max-width: 760px;
   margin: 20px auto;
