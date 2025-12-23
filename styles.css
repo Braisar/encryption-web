@@ -71,7 +71,7 @@
     section {
   margin-bottom: 10px;
 }
-     body {
+    body {
  font-family: 'Inter', 'sistem-ui' , sans-serif;
     background: linear-gradient(180deg, #d6d6d6, #a1a1a1);
     margin: 0;
@@ -268,11 +268,12 @@
   display: flex;
   justify-content: flex-end;
   padding: 15px;
+  gap: 155px;
 }
     footer {
   display: flex;
   justify-content: center;
-  gap: 155px;              /* 👈 AQUÍ está la magia */
+  gap: 155px;              /* espacio entre elementos */
   margin: 0 10px;
   flex-wrap: wrap;        /* por si en móvil no caben */
 }
